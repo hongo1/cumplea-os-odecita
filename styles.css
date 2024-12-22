@@ -3,45 +3,22 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #9fcfe9;
+    background-color: #87ceeb; /* Fondo azul cielo */
     height: 100%;
-    overflow-x: hidden; /* Solo oculta el desplazamiento horizontal */
+    overflow: hidden; /* Oculta el desplazamiento */
 }
 
-/* Fondo azul con detalles */
+/* Contenedor principal */
 .background {
     position: relative;
     width: 100%;
     min-height: 100vh; /* Permite que el contenido crezca si es necesario */
-    background-color: #87ceeb; /* Azul cielo */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Alinea el contenido al inicio */
+    justify-content: flex-start;
     align-items: center;
     padding: 20px;
     overflow: hidden;
-}
-
-.background::before, .background::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    animation: floating 5s infinite ease-in-out;
-}
-
-.background::before {
-    top: 10%;
-    left: 20%;
-    animation-delay: 0s;
-}
-
-.background::after {
-    top: 30%;
-    left: 60%;
-    animation-delay: 2s;
 }
 
 /* Texto animado de "Feliz Cumpleaños" */
@@ -89,6 +66,26 @@ h2 {
     width: 100%;
 }
 
+/* Animación de confetis */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    animation: confettiFall 2s linear infinite;
+    z-index: 10;
+}
+
+/* Diferentes colores de confetis */
+.confetti:nth-child(odd) {
+    background-color: yellow;
+}
+
+.confetti:nth-child(even) {
+    background-color: green;
+}
+
 /* Animación del texto */
 @keyframes slideAndColor {
     0% {
@@ -113,13 +110,15 @@ h2 {
     }
 }
 
-/* Animación de los detalles */
-@keyframes floating {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
+/* Animación del confeti */
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-50vh) rotate(0deg);
+        opacity: 1;
     }
-    50% {
-        transform: translateY(-20px) rotate(360deg);
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
     }
 }
 
