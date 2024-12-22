@@ -5,21 +5,21 @@ body, html {
     font-family: 'Arial', sans-serif;
     background-color: #9fcfe9;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden; /* Solo oculta el desplazamiento horizontal */
 }
 
 /* Fondo con flores que se ajusta y se ve completo */
 .background {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh; /* Permite que el contenido crezca si es necesario */
     background-image: url('flores.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Alinea el contenido al inicio */
     align-items: center;
     padding: 20px;
 }
@@ -39,8 +39,7 @@ h2 {
     font-size: 1.2rem;
     color: #fbf52b;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    margin: 0;
-    margin-top: 20px;
+    margin: 20px 0 0;
     text-align: center;
     padding: 0 10px;
 }
@@ -49,7 +48,7 @@ h2 {
 .icon {
     width: 80px;
     height: auto;
-    margin-bottom: 20px;
+    margin: 20px 0;
     transition: transform 0.3s ease;
 }
 
@@ -59,10 +58,15 @@ h2 {
 }
 
 /* Reproductor de música */
-.audio-player audio {
+.audio-player {
+    margin: 20px 0;
     width: 100%;
     max-width: 500px;
-    margin-top: 10px;
+    text-align: center;
+}
+
+.audio-player audio {
+    width: 100%;
 }
 
 /* Animación del texto */
