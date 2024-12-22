@@ -3,23 +3,23 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #9fcfe9; /* Fondo gris bajito */
+    background-color: #9fcfe9;
     height: 100%;
-    overflow: hidden; /* Evita desplazamientos no deseados */
+    overflow: hidden;
 }
 
 /* Fondo con flores que se ajusta y se ve completo */
 .background {
     position: relative;
     width: 100%;
-    height: 100vh; /* Abarca toda la altura de la pantalla */
+    height: 100vh;
     background-image: url('flores.png');
-    background-size: contain; /* Asegura que la imagen completa sea visible */
-    background-repeat: no-repeat; /* Evita que se repita */
-    background-position: center; /* Centra la imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Espacio entre el texto y la carta */
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
 }
@@ -27,26 +27,29 @@ body, html {
 /* Texto animado de "Feliz Cumpleaños" */
 h1 {
     font-size: 3rem;
-    color: #4a90e2; /* Azul inicial */
+    color: #4a90e2;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     margin: 0;
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
-    animation: slideAndColor 5s infinite linear; /* Llama a la animación */
+    animation: slideAndColor 5s infinite linear;
 }
-h2{
-    color: #fbf52b; /* Azul inicial */
+
+h2 {
+    font-size: 1.2rem;
+    color: #fbf52b;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     margin: 0;
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: center;
+    padding: 0 10px;
 }
 
 /* Icono de la carta */
 .icon {
-    width: 100px;
+    width: 80px;
     height: auto;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     transition: transform 0.3s ease;
 }
 
@@ -55,30 +58,70 @@ h2{
     cursor: pointer;
 }
 
-.icon-link {
-    text-decoration: none;
+/* Reproductor de música */
+.audio-player audio {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 10px;
 }
 
 /* Animación del texto */
 @keyframes slideAndColor {
     0% {
-        transform: translateX(-100%); /* Empieza fuera de la pantalla (izquierda) */
-        color: red; /* Color inicial */
+        transform: translateX(-100%);
+        color: red;
     }
     25% {
-        transform: translateX(25%); /* Avanza */
-        color: orange; /* Cambia de color */
+        transform: translateX(25%);
+        color: orange;
     }
     50% {
-        transform: translateX(50%); /* Centro de la pantalla */
-        color: yellow; /* Otro color */
+        transform: translateX(50%);
+        color: yellow;
     }
     75% {
-        transform: translateX(75%); /* Casi al final */
-        color: green; /* Otro color */
+        transform: translateX(75%);
+        color: green;
     }
     100% {
-        transform: translateX(100%); /* Fuera de la pantalla (derecha) */
-        color: blue; /* Último color */
+        transform: translateX(100%);
+        color: blue;
+    }
+}
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .icon {
+        width: 60px;
+    }
+
+    .audio-player audio {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 0.9rem;
+    }
+
+    .icon {
+        width: 50px;
+    }
+
+    .audio-player audio {
+        width: 100%;
     }
 }
