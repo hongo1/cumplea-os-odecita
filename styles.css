@@ -13,7 +13,7 @@ body, html {
     position: relative;
     width: 100%;
     min-height: 100vh; /* Permite que el contenido crezca si es necesario */
-    background-image: url('flores.png');
+    background-image: url('images.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
