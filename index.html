@@ -27,4 +27,18 @@
         </div>
     </div>
 </body>
+    <script>
+    const background = document.querySelector('.background');
+    const confettiCount = 100;
+
+    for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.animationDelay = `${Math.random() * 2}s`;
+        confetti.style.animationDuration = `${2 + Math.random()}s`;
+        background.appendChild(confetti);
+    }
+    </script>
+    
 </html>
