@@ -8,20 +8,40 @@ body, html {
     overflow-x: hidden; /* Solo oculta el desplazamiento horizontal */
 }
 
-/* Fondo con flores que se ajusta y se ve completo */
+/* Fondo azul con detalles */
 .background {
     position: relative;
     width: 100%;
     min-height: 100vh; /* Permite que el contenido crezca si es necesario */
-    background-image: url('images.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: #87ceeb; /* Azul cielo */
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Alinea el contenido al inicio */
     align-items: center;
     padding: 20px;
+    overflow: hidden;
+}
+
+.background::before, .background::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: floating 5s infinite ease-in-out;
+}
+
+.background::before {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.background::after {
+    top: 30%;
+    left: 60%;
+    animation-delay: 2s;
 }
 
 /* Texto animado de "Feliz Cumpleaños" */
@@ -90,6 +110,16 @@ h2 {
     100% {
         transform: translateX(100%);
         color: blue;
+    }
+}
+
+/* Animación de los detalles */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(360deg);
     }
 }
 
