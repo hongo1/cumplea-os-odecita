@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Web</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .carta {
+            width: 70%;
+            max-width: 800px;
+            background: #87CEEB; /* Color azul cielo */
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            line-height: 1.6;
+            color: #333;
+            backdrop-filter: blur(5px); /* Efecto desenfoque del fondo */
+            border: 2px solid #4682B4; /* Borde azul más oscuro */
+        }
+        .carta header {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .carta .contenido {
+            margin-bottom: 30px;
+        }
+        .carta footer {
+            text-align: left;
+        }
+        .boton-volver {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .boton-volver button {
+            background-color: #4682B4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .boton-volver button:hover {
+            background-color: #5A9BD3;
+        }
+    </style>
+</head>
+<body>
+    <div class="carta">
+        
+        <div class="contenido">
+            <p>Para mi princesa</p>
+            <p>
+                Hola reina mia, paso a desearte un feliz cumpleaños, y una feliz vida, eres la persona mas maravillosa que he conocido, y eres un ser realmente admirable, espero que este dia tan especial te sirva para voltear a verte y por fin puedas mirar lo excepcional que eres en todo sentido.
+            </p>
+            <p>
+                Estoy realmente orgulloso y feliz de haber conocido a alguien tan especial como tu, y de verdad deseo que algun dia pueda darte tu respectivo abrazo de cumpleaños. Te amo con todo mi ser odemaris, y deseo de todo corazon que la vida te sonria como mereces, y que algun dia te regrese toda la felicidad que nos has traido a este mundo mi niña.
+            </p>
+            <p>
+                Agradezco su atención y espero su pronta respuesta.
+            </p>
+        </div>
+        <footer>
+            <p>Atentamente,</p>
+            <p>Juan Pablo</p>
+        </footer>
+        <div class="boton-volver">
+            <button onclick="history.back()">Volver</button>
+        </div>
+    </div>
+</body>
+</html>
